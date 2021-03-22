@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 //import your models
-// require("./models/Quote");
+require("./models/quote");
 
 mongoose
   .connect(`mongodb://localhost:27017`, {
