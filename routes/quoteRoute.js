@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Quote = mongoose.model("QuoteModel");
+const Quote = mongoose.model("quotes");
 
 module.exports = (app) => {
   app.get(`/quotes/get`, async (req, res) => {

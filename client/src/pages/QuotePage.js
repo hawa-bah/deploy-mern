@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Quote from "../component/quote";
 
 const QuotePage = () => {
   const [quotesList, setQuotesList] = useState([]);
@@ -11,8 +12,9 @@ const QuotePage = () => {
     axios
       .get(`/quotes/get`)
       .then((res) => {
-        setQuotesList(res);
+        setQuotesList(res.data);
         console.log("setQuoteList");
+        console.log(res.data);
       })
       .catch((err) => {
         console.log("ERR", err);
@@ -21,7 +23,13 @@ const QuotePage = () => {
 
   return (
     <>
-      <div className="page"></div>
+      <div className="page">
+        {quotesList.map((ele) => {
+          <div>
+            <Quote text={ele.text} author={ele.author} />
+          </div>;
+        })}
+      </div>
     </>
   );
 };

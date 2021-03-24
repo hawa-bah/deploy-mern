@@ -10,4 +10,4 @@ const QuoteModelSchema = new Schema({
   quote: { type: String, required: true },
 });
 
-module.exports = mongoose.model("QuoteModel", QuoteModelSchema);
+module.exports = mongoose.model("quotes", QuoteModelSchema);
