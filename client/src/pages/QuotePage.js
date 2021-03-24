@@ -25,9 +25,12 @@ const QuotePage = () => {
     <>
       <div className="page">
         {quotesList.map((ele) => {
-          <div>
-            <Quote text={ele.text} author={ele.author} />
-          </div>;
+          console.log("hey");
+          return (
+            <div>
+              <Quote quote={ele.quote} author={ele.author} />
+            </div>
+          );
         })}
       </div>
     </>

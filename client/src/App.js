@@ -10,7 +10,6 @@ function App() {
       <Router>
         <Route exact path="/">
           <QuotePage />
-          <Quote />
         </Route>
       </Router>
     </div>

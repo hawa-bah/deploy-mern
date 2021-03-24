@@ -1,9 +1,13 @@
 import React from "react";
 
-const Quote = () => {
+const Quote = (props) => {
+  const { quote, author } = props;
   return (
     <>
-      <div></div>
+      <div className="quote-box">
+        <p>{quote}</p>
+        <p>{author}</p>
+      </div>
     </>
   );
 };
