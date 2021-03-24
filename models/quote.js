@@ -7,7 +7,7 @@ const QuoteModelSchema = new Schema({
     type: String,
     required: true,
   },
-  text: { type: String, required: true },
+  quote: { type: String, required: true },
 });
 
 module.exports = mongoose.model("QuoteModel", QuoteModelSchema);
