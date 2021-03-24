@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Quote from "../component/quote";
+import "../quote.css";
 
 const QuotePage = () => {
   const [quotesList, setQuotesList] = useState([]);

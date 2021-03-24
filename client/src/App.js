@@ -1,4 +1,4 @@
-import "./App.css";
+import "./quote.css";
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import QuotePage from "./pages/QuotePage";

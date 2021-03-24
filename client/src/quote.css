@@ -1,0 +1,11 @@
+.quote-box {
+  padding: 30px;
+  border: red solid 1px;
+}
+.quote-box {
+  display: flex;
+  flex-direction: column;
+}
+.page {
+  padding: 20px;
+}
