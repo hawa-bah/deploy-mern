@@ -22,17 +22,44 @@ const QuotePage = () => {
       });
   };
 
+  const submitNewQuote = (e) => {
+    e.preventDefault();
+    // console.log(e.author);
+    const author = document.getElementById("author").value;
+    const quote = document.getElementById("quote").value;
+    console.log(author, quote);
+    // axios.post({});
+  };
+
   return (
     <>
       <div className="page">
-        {quotesList.map((ele) => {
-          console.log("hey");
-          return (
-            <div key={ele._id}>
-              <Quote quote={ele.quote} author={ele.author} />
-            </div>
-          );
-        })}
+        <div className="form-quote">
+          <form>
+            <label>Enter your favorite quote:</label>
+            <input name="quote" id="quote" type="text" required></input>
+            <label>Who is the author</label>
+            <input name="author" id="author" type="text" required></input>
+
+            <button
+              name="button"
+              type="submit"
+              onClick={(e) => submitNewQuote(e)}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div>
+          {quotesList.map((ele) => {
+            console.log("hey");
+            return (
+              <div key={ele._id}>
+                <Quote quote={ele.quote} author={ele.author} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
