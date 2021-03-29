@@ -1,10 +1,16 @@
 .quote-box {
   padding: 30px;
-  border: red solid 1px;
+  border: black solid 1px;
 }
 .quote-box {
   display: flex;
   flex-direction: column;
+}
+.author-box {
+  display: flex;
+  justify-content: flex-end;
+  background: yellow;
+  /* text-align: end; */
 }
 .page {
   padding: 20px;

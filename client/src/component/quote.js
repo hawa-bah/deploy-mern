@@ -6,8 +6,12 @@ const Quote = (props) => {
   return (
     <>
       <div className="quote-box">
-        <p>{quote}</p>
-        <p>{author}</p>
+        <div className="quoter-box">
+          <p>{quote}</p>
+        </div>
+        <div className="author-box">
+          <p> - {author}</p>
+        </div>
       </div>
     </>
   );
