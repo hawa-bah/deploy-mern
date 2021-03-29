@@ -10,7 +10,8 @@
   display: flex;
   justify-content: flex-end;
   background: yellow;
-  /* text-align: end; */
+  margin-left: 75%;
+  padding-right: 20px;
 }
 .page {
   padding: 20px;
