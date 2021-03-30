@@ -50,10 +50,14 @@ const QuotePage = () => {
       <div className="page">
         <div className="form-quote">
           <form>
-            <label>Enter your favorite quote:</label>
-            <input name="quote" id="quote" type="text" required></input>
-            <label>Who is the author</label>
-            <input name="author" id="author" type="text" required></input>
+            <div>
+              <label>Enter your favorite quote:</label>
+              <input name="quote" id="quote" type="text" required></input>
+            </div>
+            <div>
+              <label>Who is the author</label>
+              <input name="author" id="author" type="text" required></input>
+            </div>
 
             <button
               name="button"
