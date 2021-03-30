@@ -5,10 +5,11 @@ import "../quote.css";
 
 const QuotePage = () => {
   const [quotesList, setQuotesList] = useState([]);
+  const [clickSubmit, setClickSubmit] = useState(false);
 
   useEffect(() => {
     renderQuotes();
-  }, []);
+  }, [clickSubmit]);
   const renderQuotes = () => {
     axios
       .get(`/quotes/get`)
@@ -28,7 +29,20 @@ const QuotePage = () => {
     const author = document.getElementById("author").value;
     const quote = document.getElementById("quote").value;
     console.log(author, quote);
-    // axios.post({});
+    axios
+      .post(`/quotes/post`, {
+        quote: quote,
+        author: author,
+      })
+      .then(
+        (res) => {
+          console.log(res);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    setClickSubmit(!clickSubmit);
   };
 
   return (

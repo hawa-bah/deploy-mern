@@ -11,15 +11,17 @@ module.exports = (app) => {
     }
   });
 
-  app.post(`/quote/post`, async (req, res) => {
+  app.post(`/quotes/post`, async (req, res) => {
     try {
       const quotePosted = new Quote({
         quote: req.body.quote,
-        author: req.body.aauthor,
+        author: req.body.author,
       });
       await quotePosted.save();
+      console.log("win", quotePosted);
       return res.send(quotePosted);
     } catch (error) {
+      console.log("hey", error);
       return res.send(error);
     }
   });
