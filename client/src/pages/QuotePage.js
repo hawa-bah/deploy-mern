@@ -25,9 +25,8 @@ const QuotePage = () => {
 
   const submitNewQuote = (e) => {
     e.preventDefault();
-    // console.log(e.author);
-    const author = document.getElementById("author").value;
-    const quote = document.getElementById("quote").value;
+    let author = document.getElementById("author").value;
+    let quote = document.getElementById("quote").value;
     console.log(author, quote);
     axios
       .post(`/quotes/post`, {
@@ -43,13 +42,14 @@ const QuotePage = () => {
         }
       );
     setClickSubmit(!clickSubmit);
+    document.getElementById("form").reset();
   };
 
   return (
     <>
       <div className="page">
         <div className="form-quote">
-          <form>
+          <form id="form">
             <div>
               <label>Enter your favorite quote:</label>
               <input name="quote" id="quote" type="text" required></input>
