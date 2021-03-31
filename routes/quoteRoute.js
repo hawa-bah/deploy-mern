@@ -18,10 +18,10 @@ module.exports = (app) => {
         author: req.body.author,
       });
       await quotePosted.save();
-      console.log("win", quotePosted);
+      console.log("posting a new quote:", quotePosted);
       return res.send(quotePosted);
     } catch (error) {
-      console.log("hey", error);
+      console.log("hey there's an err", error);
       return res.send(error);
     }
   });

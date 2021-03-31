@@ -69,14 +69,16 @@ const QuotePage = () => {
           </form>
         </div>
         <div>
-          {quotesList.map((ele) => {
-            console.log("hey");
-            return (
-              <div key={ele._id}>
-                <Quote quote={ele.quote} author={ele.author} />
-              </div>
-            );
-          })}
+          {quotesList.length > 0
+            ? quotesList.map((ele) => {
+                console.log("hey");
+                return (
+                  <div key={ele._id}>
+                    <Quote quote={ele.quote} author={ele.author} />
+                  </div>
+                );
+              })
+            : null}
         </div>
       </div>
     </>
