@@ -1,7 +1,7 @@
 # Deploy-mern
 This repository is part of a tutorial to deploy a MERN application using Heroku. You can read more about it in the [blog post]().
 It contains a basic full-stack application which allows users to submit a quote with a form. All the quotes will be displayed in the web application. 
-![image](https://user-images.githubusercontent.com/56238080/113559449-49a6de00-95f9-11eb-89db-bcc347681699.png)
+![](https://user-images.githubusercontent.com/56238080/113559449-49a6de00-95f9-11eb-89db-bcc347681699.png =25x)
 
 
 ### Table of contents
