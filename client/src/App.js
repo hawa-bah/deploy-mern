@@ -1,19 +1,27 @@
-import "./quote.css";
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import QuotePage from "./pages/QuotePage";
-import Quote from "./component/quote";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+import CreateArticle from './components/CreateArticle';
+import ShowArticleList from './components/ShowArticleList';
+import ShowArticleDetails from './components/ShowArticleDetails';
+import UpdateArticleInfo from './components/UpdateArticleInfo';
+import ArticleSearch from './components/ArticleSearch';
+
+class App extends Component {
+  render() {
+    return (
       <Router>
-        <Route exact path="/">
-          <QuotePage />
-        </Route>
+        <div>
+          <Route exact path='/' component={ShowArticleList} />
+          <Route path='/create-article' component={CreateArticle} />
+          <Route path='/edit-article/:id' component={UpdateArticleInfo} />
+          <Route path='/show-article/:id' component={ShowArticleDetails} />
+          <Route path='/search-article' component={ArticleSearch} />
+        </div>
       </Router>
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
+export default App; //change
