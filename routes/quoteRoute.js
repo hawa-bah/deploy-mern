@@ -1,28 +1,31 @@
-const mongoose = require("mongoose");
-const Quote = mongoose.model("quotes");
+const mongoose = require('mongoose');
 
-module.exports = (app) => {
-  app.get(`/quotes/get`, async (req, res) => {
-    try {
-      const quotes = await Quote.find({});
-      return res.send(quotes);
-    } catch (error) {
-      return res.send(error);
-    }
-  });
+const ArticleSchema = new mongoose.Schema({
+  titles: {
+    type: String
+  },
+  author: {
+    type: String,
+    required: true
+  },
+  published_date: {
+    type: Date,
+    required: true
+  },
+  credibity_rating: {
+    type: Number,
+    required: true
+  },
+  SE_method: {
+    type: String
+  },
+  reasearch_method: {
+    type: String
+  },
+  updated_date: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-  app.post(`/quotes/post`, async (req, res) => {
-    try {
-      const quotePosted = new Quote({
-        quote: req.body.quote,
-        author: req.body.author,
-      });
-      await quotePosted.save();
-      console.log("posting a new quote:", quotePosted);
-      return res.send(quotePosted);
-    } catch (error) {
-      console.log("hey there's an err", error);
-      return res.send(error);
-    }
-  });
-};
+module.exports = Article = mongoose.model('article', ArticleSchema);
