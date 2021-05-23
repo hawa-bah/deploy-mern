@@ -3,13 +3,10 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 const cors = require("cors");
-
 const app = express();
-app.use(cors());
-
-//import your models
-require("./models/quote");
 require("dotenv").config();
+
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING, {
@@ -26,12 +23,17 @@ app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
+app.get('/', (req, res) => res.send('Hello world!'));
+
 //middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.json({ extended: false }));
 
 //import routes
-require("./routes/quoteRoute.js")(app);
+const books = require('./routes/api/books');
+app.use('/api/books', books);
+app.use(cors({ origin: true, credentials: true }));
 
 const PORT = process.env.PORT || 5000;
 
