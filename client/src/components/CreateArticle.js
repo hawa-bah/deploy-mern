@@ -34,7 +34,7 @@ class CreateArticle extends Component {
     };
 
     axios
-      .post('http://localhost:8082/api/articles', data)
+      .post('http://localhost:5000/api/articles', data)
       .then(res => {
         this.setState({
           titles: '',

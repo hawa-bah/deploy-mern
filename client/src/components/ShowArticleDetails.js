@@ -14,7 +14,7 @@ class showArticleDetails extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:8082/api/articles/'+this.props.match.params.id)
+      .get('http://localhost:5000/api/articles/'+this.props.match.params.id)
       .then(res => {
         // console.log("Print-showArticleDetails-API-response: " + res.data);
         this.setState({
@@ -28,7 +28,7 @@ class showArticleDetails extends Component {
 
   onDeleteClick (id) {
     axios
-      .delete('http://localhost:8082/api/articles/'+id)
+      .delete('http://localhost:5000/api/articles/'+id)
       .then(res => {
         this.props.history.push("/");
       })
