@@ -9,7 +9,7 @@ require("dotenv").config();
 app.use(cors());
 
 mongoose
-  .connect(process.env.MONGODB_CONNECTION_STRING, {
+  .connect("mongodb+srv://SEEDS:rN4oGfM1Iw5qFBL1@seedsteam18.eyuov.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -31,8 +31,8 @@ app.use(bodyParser.json());
 app.use(express.json({ extended: false }));
 
 //import routes
-const books = require('./routes/api/books');
-app.use('/api/books', books);
+const articles = require('./routes/api/articles');
+app.use('/api/articles', articles);
 app.use(cors({ origin: true, credentials: true }));
 
 const PORT = process.env.PORT || 5000;
